@@ -1,11 +1,17 @@
 
+import NotFound from "@/app/notfound";
 import { Job } from "@/model/application"
 
 export default async function ApplicationDetail({ params }:{ params: {id: string}}){
  
   const res = await fetch(`http://localhost:5000/applications/${params.id}`); // Fetch from JSON server
+
+  if(!res) {
+    return <NotFound/>
+  }
+
   const job: Job = await res.json();
- 
+   
 
   if (!job) return <p>Loading...</p>;
 
