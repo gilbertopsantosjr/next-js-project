@@ -1,16 +1,13 @@
-import JobApplicationsList from '@/components/job-list'
 import { Job } from "@/model/application"
 import Link from "next/link"
 
-export default async function Applications() {
-    const res = await fetch("http://localhost:5000/applications");
-    const jobs: Job[] = await res.json();
+export default async function Applications({ jobs } : { jobs: Job[] }) {
 
     return (
       <div className="p-6">
         <h1 className="text-2xl font-bold mb-4">Job Listings</h1>
         <ul>
-          {jobs.map((job) => (
+          {jobs?.map((job) => (
             <li key={job.id} className="mb-6 p-4 border rounded-lg shadow-lg">
               <Link key={'a_' + job.id} href={"/application-detail"}>
                 <img src={job.company.logo} alt={job.company.name} className="w-12 h-12 mb-2" />
