@@ -1,5 +1,5 @@
 
-import NotFound from "@/app/notfound";
+import NotFound from "@/app/not-found";
 import { Job } from "@/model/application"
 
 export default async function ApplicationDetail({ params }:{ params: {id: string}}){
