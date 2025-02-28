@@ -1,5 +1,7 @@
-import NotFoundPage from '@/components/NotFoundPage'
-
 export default function NotFound() {
-  return <NotFoundPage />
+  return (
+    <>
+      <p>Sorry, the saved item you're looking for does not exist.</p>
+    </>
+  )
 }
