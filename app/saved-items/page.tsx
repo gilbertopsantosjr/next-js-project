@@ -1,4 +1,4 @@
-import SavedItems from '@/components/SavedItems'
+import SavedItems from './SavedItems'
 export default function SavedItemsPage() {
   return <SavedItems />
 }
