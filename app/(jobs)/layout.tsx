@@ -9,11 +9,15 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Career Tracker',
+  title: {
+    default: 'Career Tracker',
+    template: `s% | Career Tracker`,
+    absolute: ''
+  },
   description: 'Track and manage your job applications and LinkedIn saved items'
 }
 
-export default function RootLayout({
+export default async function JobsRootLayout({
   children
 }: {
   children: React.ReactNode

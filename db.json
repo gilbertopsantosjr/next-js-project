@@ -1,37 +1,134 @@
 {
-    "applications": [
-        {
-            "id": "job-12345",
-            "title": "Software Engineer",
-            "description": "Develop and maintain web applications.",
-            "createAt": "2025-02-10T10:00:00Z",
-            "updateAt": "2025-02-15T15:30:00Z",
-            "company": {
-              "logo": "https://example.com/logo.png",
-              "name": "TechCorp"
-            }
-          },
+  "saved-items": [
+    {
+      "id": "1",
+      "title": "10 Tips for Remote Work Success",
+      "url": "https://linkedin.com/post/1",
+      "type": "article",
+      "categories": ["Remote Work", "Career Tips"],
+      "dateAdded": "2024-03-20",
+      "dateModified": "2024-03-20"
+    },
+    {
+      "id": "2",
+      "title": "The Future of Web Development",
+      "url": "https://linkedin.com/post/2",
+      "type": "post",
+      "categories": ["Web Development", "Technology"],
+      "dateAdded": "2024-03-19",
+      "dateModified": "2024-03-19"
+    },
+    {
+      "id": "3",
+      "title": "Building Scalable Systems",
+      "url": "https://linkedin.com/post/3",
+      "type": "article",
+      "categories": ["Technology", "System Design"],
+      "dateAdded": "2024-03-18",
+      "dateModified": "2024-03-18"
+    },
+    {
+      "id": "1",
+      "title": "10 Tips for Remote Work Success",
+      "url": "https://linkedin.com/post/1",
+      "type": "article",
+      "categories": ["Remote Work", "Career Tips"],
+      "dateAdded": "2024-03-20",
+      "dateModified": "2024-03-20"
+    },
+    {
+      "id": "2",
+      "title": "The Future of Web Development",
+      "url": "https://linkedin.com/post/2",
+      "type": "post",
+      "categories": ["Web Development", "Technology"],
+      "dateAdded": "2024-03-19",
+      "dateModified": "2024-03-19"
+    },
+    {
+      "id": "3",
+      "title": "Building Scalable Systems",
+      "url": "https://linkedin.com/post/3",
+      "type": "article",
+      "categories": ["Technology", "System Design"],
+      "dateAdded": "2024-03-18",
+      "dateModified": "2024-03-18"
+    }
+  ],
+  "applications": [
+    {
+      "id": "job-12345",
+      "title": "Software Engineer",
+      "description": "Develop and maintain web applications.",
+      "createAt": "2025-02-10T10:00:00Z",
+      "updateAt": "2025-02-15T15:30:00Z",
+      "company": {
+        "logo": "https://example.com/logo.png",
+        "name": "TechCorp",
+        "interview-questions": []
+      }
+    },
+    {
+      "id": "job-67890",
+      "title": "Product Manager",
+      "description": "Lead product development and strategy.",
+      "createAt": "2025-01-20T08:45:00Z",
+      "updateAt": "2025-02-14T12:15:00Z",
+      "company": {
+        "logo": "https://example.com/pm-logo.png",
+        "name": "Innovate Inc.",
+        "interview-questions": [
           {
-            "id": "job-67890",
-            "title": "Product Manager",
-            "description": "Lead product development and strategy.",
-            "createAt": "2025-01-20T08:45:00Z",
-            "updateAt": "2025-02-14T12:15:00Z",
-            "company": {
-              "logo": "https://example.com/pm-logo.png",
-              "name": "Innovate Inc."
-            }
-          },
-          {
-            "id": "job-54321",
-            "title": "Data Scientist",
-            "description": "Analyze data and build predictive models.",
-            "createAt": "2025-02-05T14:20:00Z",
-            "updateAt": "2025-02-16T09:10:00Z",
-            "company": {
-              "logo": "https://example.com/data-logo.png",
-              "name": "AI Solutions"
-            }
+            "id": "2",
+            "question": "Describe a challenging project you've worked on",
+            "context": "Full Stack Engineer interview at Startup Inc",
+            "company": "Startup Inc",
+            "date": "2024-03-19",
+            "aiSuggestions": [
+              "I led a migration from a monolithic architecture to microservices, which improved system scalability by 300%. The key challenges were maintaining service continuity and managing team coordination across multiple services.",
+              "I implemented a real-time collaboration feature in our document editing platform. The main challenge was handling concurrent edits and conflict resolution while maintaining a smooth user experience.",
+              "I developed a high-performance data processing pipeline that reduced processing time from hours to minutes. The project required careful optimization and innovative solutions for handling large datasets efficiently."
+            ]
           }
-    ]
+        ]
+      }
+    },
+    {
+      "id": "job-54321",
+      "title": "Data Scientist",
+      "description": "Analyze data and build predictive models.",
+      "createAt": "2025-02-05T14:20:00Z",
+      "updateAt": "2025-02-16T09:10:00Z",
+      "company": {
+        "logo": "https://example.com/data-logo.png",
+        "name": "AI Solutions",
+        "interview-questions": [
+          {
+            "id": "1",
+            "question": "How do you handle conflicts in a team?",
+            "context": "Senior Frontend Developer position at Tech Corp",
+            "company": "Tech Corp",
+            "date": "2024-03-20",
+            "aiSuggestions": [
+              "I believe in addressing conflicts early through open communication. First, I listen to understand all perspectives. Then, I work with team members to find common ground and develop solutions that benefit the team and project.",
+              "My approach involves identifying the root cause of conflicts and facilitating constructive discussions. I focus on maintaining professional relationships while working towards resolution through compromise and clear communication.",
+              "I use the GROW model: Gather information about the conflict, Review possible solutions with all parties, Outline agreed-upon actions, and Watch for improvement. This structured approach helps maintain team harmony while resolving issues effectively."
+            ]
+          },
+          {
+            "id": "3",
+            "question": "How do you approach system architecture decisions?",
+            "context": "Software Architect position at Innovation Labs",
+            "company": "Innovation Labs",
+            "date": "2024-03-18",
+            "aiSuggestions": [
+              "I follow a systematic approach that starts with gathering requirements, analyzing constraints, and evaluating different architectural patterns. I consider factors like scalability, maintainability, and performance while ensuring alignment with business goals.",
+              "My decision-making process involves creating proof-of-concepts for critical components, conducting thorough technical evaluations, and getting feedback from stakeholders. I also consider the team's expertise and the long-term maintainability of the solution.",
+              "I use the C4 model for visualizing and documenting architecture decisions, which helps in communicating the design effectively across different levels of abstraction. I also ensure that decisions are validated against quality attributes and business requirements."
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }
