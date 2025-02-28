@@ -7,6 +7,7 @@ type Props = {
   reset: () => void
 }
 
+/* an error handling for specific use case  */
 export default function ErrorBoundary({ error, reset }: Props) {
   const router = useRouter()
   const reload = () => {
@@ -17,7 +18,7 @@ export default function ErrorBoundary({ error, reset }: Props) {
   }
   return (
     <div>
-      Error in Saved Items {error.message}
+      Error in {error.message}
       <button onClick={reload}>Reload</button>
     </div>
   )

@@ -4,14 +4,15 @@ import { Briefcase } from 'lucide-react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-import './globals.css'
+import { ErrorWrapper } from '@/components/ErrorWrapper'
+import '../globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
     default: 'Career Tracker',
-    template: `s% | Career Tracker`,
+    template: 's% | Career Tracker',
     absolute: ''
   },
   description: 'Track and manage your job applications and LinkedIn saved items'
@@ -36,7 +37,9 @@ export default async function JobsRootLayout({
             </div>
           </header>
           <Menu />
-          <main>{children}</main>
+          <main>
+            <ErrorWrapper>{children}</ErrorWrapper>
+          </main>
           <footer>copyright 2021 Gilberto Santos</footer>
         </div>
       </body>
