@@ -35,8 +35,8 @@ export default function JobApplicationsPage() {
       location: 'Remote',
       status: 'applied',
       categories: ['Frontend', 'Remote'],
-      dateAdded: '2024-03-20',
-      dateModified: '2024-03-20'
+      createAt: '2024-03-20',
+      updateAt: '2024-03-20'
     },
     {
       id: '2',
@@ -45,8 +45,8 @@ export default function JobApplicationsPage() {
       location: 'New York, NY',
       status: 'interviewing',
       categories: ['Full Stack', 'On-site'],
-      dateAdded: '2024-03-19',
-      dateModified: '2024-03-20'
+      createAt: '2024-03-19',
+      updateAt: '2024-03-20'
     }
   ]
 

@@ -12,6 +12,12 @@ export type Category = {
   color: string;
 };
 
+export type Company = {
+  name: string;
+  logo?: string;
+  interviewQuestions?: InterviewQuestion []
+}
+
 export type JobApplication = {
   id: string;
   title: string;
@@ -21,11 +27,10 @@ export type JobApplication = {
   description?: string;
   salary?: string;
   status: JobStatus;
-  categories: string[];
   notes?: string;
-  dateAdded: string;
-  dateModified: string;
-  lastActivityDate?: string;
+  createAt: Date;
+  updateAt: Date;
+  lastActivityDate?: Date;
   interviewQuestions?: InterviewQuestion[];
 };
 
@@ -36,8 +41,8 @@ export type SavedItem = {
   type: 'post' | 'article' | 'job';
   categories: string[];
   notes?: string;
-  dateAdded: string;
-  dateModified: string;
+  createAt: Date;
+  updateAt: Date;
 };
 
 export type InterviewQuestion = {
@@ -45,7 +50,7 @@ export type InterviewQuestion = {
   question: string;
   context?: string;
   company: string;
-  date: string;
+  date: Date;
   aiSuggestions?: string[];
   actualAnswer?: string;
   feedback?: string;
