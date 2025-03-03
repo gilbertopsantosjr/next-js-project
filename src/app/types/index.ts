@@ -15,13 +15,13 @@ export type Category = {
 export type Company = {
   name: string;
   logo?: string;
-  interviewQuestions?: InterviewQuestion []
+  interviewQuestions?: []
 }
 
 export type JobApplication = {
   id: string;
   title: string;
-  company: string;
+  company: Company;
   location: string;
   linkedInUrl?: string;
   description?: string;
@@ -53,5 +53,5 @@ export type InterviewQuestion = {
   date: Date;
   aiSuggestions?: string[];
   actualAnswer?: string;
-  feedback?: string;
+  feedback?: [];
 };
