@@ -4,24 +4,30 @@ import { Company, JobApplication } from "@/app/types"
 import { redirect } from "next/navigation"
 import { randomUUID } from 'crypto'
 
-type Errors = {
+type JobApplicationFormErrors = {
     title?: string
     company?: string
     description?: string
+    location?: string
     status?: string
 }
 
-type FormState = {
-    errors: Errors
+type JobApplicationFormState = {
+    errors: JobApplicationFormErrors
 }
 
-export async function updateJobApplication(prevState: FormState, formData: FormData){
+export async function updateJobApplication(prevState: JobApplicationFormState, formData: FormData){
     const status = formData.get("status") as string
+    const description = formData.get("description") as string
 
-    const errors: Errors = {  }
+    const errors: JobApplicationFormErrors = {  }
 
     if(!status){
         errors.status = 'Status of job application is required'
+    }
+
+    if(!description){
+        errors.description = 'Description is required'
     }
 
     if(Object.keys(errors).length > 0){
@@ -50,13 +56,13 @@ export async function updateJobApplication(prevState: FormState, formData: FormD
 
 }
 
-export async function createJobApp(prevState: FormState, formData: FormData){
+export async function createJobApp(prevState: JobApplicationFormState, formData: FormData){
     const title = formData.get("title") as string
     const description = formData.get("description") as string
     const companyName = formData.get("company") as string
     const location = formData.get("location") as string
 
-    const errors: Errors = {  }
+    const errors: JobApplicationFormErrors = {  }
 
     if(!title){
         errors.title = 'Title is required'
@@ -64,6 +70,10 @@ export async function createJobApp(prevState: FormState, formData: FormData){
 
     if(!description){
         errors.description = 'Description is required'
+    }
+
+    if(!location){
+        errors.location = 'Location is required'
     }
 
     if(!companyName){

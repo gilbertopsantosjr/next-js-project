@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const statusColors: Record<JobStatus, string> = {
   saved: 'bg-blue-100 text-blue-800',
@@ -27,28 +27,15 @@ export default function JobApplicationsPage() {
   const [search, setSearch] = useState('')
 
   // This would be replaced with actual data from your backend
-  const mockJobs: JobApplication[] = [
-    {
-      id: '1',
-      title: 'Senior Frontend Developer',
-      company: 'Tech Corp',
-      location: 'Remote',
-      status: 'applied',
-      categories: ['Frontend', 'Remote'],
-      createAt: '2024-03-20',
-      updateAt: '2024-03-20'
-    },
-    {
-      id: '2',
-      title: 'Full Stack Engineer',
-      company: 'Startup Inc',
-      location: 'New York, NY',
-      status: 'interviewing',
-      categories: ['Full Stack', 'On-site'],
-      createAt: '2024-03-19',
-      updateAt: '2024-03-20'
-    }
-  ]
+  const jobs: JobApplication[] = []
+
+  useEffect(() => {
+    fetch(`/api/jobs/applications/`)
+      .then((res) => res.json)
+      .then((ja) => {
+        console.log(ja)
+      })
+  }, [])
 
   return (
     <div className="space-y-4">
@@ -79,7 +66,7 @@ export default function JobApplicationsPage() {
       </div>
 
       <div className="grid gap-4">
-        {mockJobs.map((job) => (
+        {jobs.map((job) => (
           <Card key={job.id} className="hover:bg-accent/50 cursor-pointer">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-xl font-bold">{job.title}</CardTitle>
@@ -88,7 +75,7 @@ export default function JobApplicationsPage() {
             <CardContent>
               <div className="flex flex-col gap-2">
                 <p className="text-sm text-muted-foreground">
-                  {job.company} • {job.location}
+                  {job.company.name} • {job.location}
                 </p>
                 <div className="flex gap-2">
                   {job.categories.map((category) => (

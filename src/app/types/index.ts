@@ -40,6 +40,7 @@ export type JobApplication = {
   notes?: string;
   createAt: Date;
   updateAt: Date;
+  categories?: string[];
   lastActivityDate?: Date;
   interviewQuestions?: InterviewQuestion[];
 };
