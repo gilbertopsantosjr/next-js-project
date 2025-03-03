@@ -6,6 +6,16 @@ export type JobStatus =
   | 'rejected'
   | 'accepted';
 
+// Manually create an array of JobStatus values
+export const jobStatuses: JobStatus[] = [
+  "saved",
+  "applied",
+  "interviewing",
+  "offered",
+  "rejected",
+  "accepted",
+];
+
 export type Category = {
   id: string;
   name: string;

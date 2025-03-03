@@ -6,13 +6,48 @@ import { randomUUID } from 'crypto'
 
 type Errors = {
     title?: string
-    description?: string
     company?: string
-    location?: string
+    description?: string
+    status?: string
 }
 
 type FormState = {
     errors: Errors
+}
+
+export async function updateJobApplication(prevState: FormState, formData: FormData){
+    const status = formData.get("status") as string
+
+    const errors: Errors = {  }
+
+    if(!status){
+        errors.status = 'Status of job application is required'
+    }
+
+    if(Object.keys(errors).length > 0){
+        return { errors }
+    }
+
+    const job: JobApplication = {
+        id: ??,
+        title: title, 
+        description: description, 
+        createAt: new Date(), 
+        updateAt: new Date(), 
+        status: 'saved',
+        company: company, 
+        location: location,
+    } satisfies JobApplication
+
+
+    await fetch(`${process.env.JSON_SERVER_URL}/applications`, { 
+        method: 'PUT',
+        body: JSON.stringify(job),
+        headers: {'Content-Type': 'applications/json'}
+    })
+
+    redirect("/job-applications")
+
 }
 
 export async function createJobApp(prevState: FormState, formData: FormData){
