@@ -1,4 +1,6 @@
 
+"use client"
+
 import { SubmitButton } from "@/components/SubmitButton"
 import { useActionState } from "react"
 import { createJobApp } from "@/actions/jobapplications"
